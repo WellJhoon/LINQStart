@@ -1,6 +1,6 @@
 ﻿
 
-var Romo = new List<Romo>()
+var Romos = new List<Romo>()
 {
     new Romo(){Name = "Presidente", Brand = "Presidete", Alchol = 7.2m},
     new Romo(){Name = "Vodka", Brand = "Ruso", Alchol = 50m},
@@ -8,13 +8,13 @@ var Romo = new List<Romo>()
     new Romo(){Name = "Kleren", Brand = "Patio Doña juana", Alchol = 95.5m}
 };
 
-var names = from b in Romo
-            select b.Name;
+//Colecciones anonimas con LINQ
+var Romos2 = from b in Romos
+             select new { b.Name, b.Brand };
 
-
-foreach (var name in names)
+foreach (var b in Romos2)
 {
-    Console.WriteLine(name);
+    Console.WriteLine(b.Brand);
 }
 public class Romo
 {
